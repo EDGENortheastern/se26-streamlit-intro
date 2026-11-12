@@ -1,5 +1,5 @@
-from pathlib import Path
-import streamlit as st
+from pathlib import Path  # Builds the path to the style.css file
+import streamlit as st  # Streamlit turns this script into a web app
 
 # Load our custom styles. Passing a .css file to st.html injects it as a <style> tag.
 st.html(Path("style.css"))

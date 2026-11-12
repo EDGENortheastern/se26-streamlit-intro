@@ -61,8 +61,8 @@ The project is deliberately small. `app.py` is the Streamlit app itself. `style.
 Streamlit runs your Python script from top to bottom every time the user interacts with the page. That simple idea explains the whole app.
 
 ```python
-from pathlib import Path
-import streamlit as st
+from pathlib import Path  # Builds the path to the style.css file
+import streamlit as st  # Streamlit turns this script into a web app
 
 st.html(Path("style.css"))
 
@@ -172,7 +172,7 @@ Streamlit gives every app a clean default look, but sometimes you want your own 
 In recent versions of Streamlit, `st.html` can be given the path to a `.css` file. Streamlit reads the file and adds its contents to the page inside a `<style>` tag, so the rules apply to the whole app.
 
 ```python
-from pathlib import Path
+from pathlib import Path  # Builds the path to the style.css file
 st.html(Path("style.css"))
 ```
 
