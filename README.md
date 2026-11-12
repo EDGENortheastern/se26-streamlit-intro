@@ -26,9 +26,7 @@ If the app has not been used for a while, Streamlit may show a message saying th
 
 When the app opens you will see the title "Hello Name App" at the top, and underneath it a question, "What is your name?", with an empty text box.
 
-![Screenshot of the Hello Name App showing the title and the empty name box](assets/user_guide.png)
-
-*The screenshot above was taken before the newer colour theme was added, so the colours on the live app may look a little different. The layout and the way it works are the same.*
+![Screenshot of the Hello Name App with "Garfield" typed in the name box and the greeting "Hello, Garfield!" below it](assets/user_guide.png)
 
 ### Using the app
 
@@ -75,18 +73,83 @@ The first `st.html` line loads the CSS file into the page (more on this below). 
 
 ### Running the app locally
 
-You will need Python 3.9 or newer. From the project folder, create and activate a virtual environment, install Streamlit, then start the app:
+You will need Python 3.9 or newer. Open a terminal in the project folder, then run the commands below one at a time. Each command is in its own box so you can copy it with the copy button.
+
+#### macOS (Terminal)
+
+1. Create a virtual environment:
+
+   ```bash
+   python3 -m venv .venv
+   ```
+
+2. Activate it. Your prompt will start with `(.venv)`:
+
+   ```bash
+   source .venv/bin/activate
+   ```
+
+3. Install Streamlit:
+
+   ```bash
+   pip install streamlit
+   ```
+
+4. Start the app:
+
+   ```bash
+   streamlit run app.py
+   ```
+
+#### Windows (PowerShell)
+
+1. Create a virtual environment:
+
+   ```powershell
+   py -m venv .venv
+   ```
+
+2. Activate it. Your prompt will start with `(.venv)`:
+
+   ```powershell
+   .venv\Scripts\Activate.ps1
+   ```
+
+   If PowerShell says running scripts is disabled, run this once, then try step 2 again:
+
+   ```powershell
+   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+   ```
+
+   If you are using Command Prompt instead of PowerShell, activate with:
+
+   ```bat
+   .venv\Scripts\activate.bat
+   ```
+
+3. Install Streamlit:
+
+   ```powershell
+   pip install streamlit
+   ```
+
+4. Start the app:
+
+   ```powershell
+   streamlit run app.py
+   ```
+
+#### After it starts
+
+Streamlit will print a local address, usually `http://localhost:8501`, and open it in your browser. To stop the app, press **Ctrl + C** in the terminal. Next time, you only need to activate the virtual environment (step 2) and start the app (step 4).
+
+While the app is running, save your changes to `app.py` or `style.css`, click on the page and press **R** to rerun it. The app hides Streamlit's usual top bar, so the "Rerun" menu is not shown.
+
+The project was developed with Streamlit 1.67. Loading a CSS file with `st.html` and styling containers by key both need a fairly recent version, so if the styles do not appear, upgrade Streamlit (on macOS or Windows) with the virtual environment active:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate        # On Windows: .venv\Scripts\activate
-pip install streamlit
-streamlit run app.py
+pip install --upgrade streamlit
 ```
-
-Streamlit will print a local address, usually `http://localhost:8501`, and open it in your browser. While the app is running, any change you save to `app.py` or `style.css` can be picked up by clicking "Rerun" in the top-right corner of the page, or by choosing "Always rerun" so it updates automatically.
-
-The project was developed with Streamlit 1.67. Loading a CSS file with `st.html` and styling containers by key both need a fairly recent version, so if the styles do not appear, upgrade with `pip install --upgrade streamlit`.
 
 ### Deploying
 
