@@ -1,3 +1,107 @@
-.st-emotion-cache-15ialw h1 {
-    color: blueviolet;
+/*
+  Custom styles for the Hello Name App.
+
+  We target Streamlit's data-testid attributes and st-key-* classes
+  because they stay the same between Streamlit versions. Classes like
+  .st-emotion-cache-15ialw are generated automatically and can change
+  whenever Streamlit is updated, which would silently break the styles.
+*/
+
+/* Colour palette, defined once so it is easy to change later */
+:root {
+    --peach-light: #faae80;
+    --orange: #f58552;
+    --orange-dark: #d74b19;
+
+    --cream: #ffe1a5;
+    --sun: #fec54c;
+
+    --mint-light: #bfe2c6;
+    --sage: #609f80;
+    --forest: #045944;
+
+    --sky-light: #c8eaf7;
+    --sky: #62b6d0;
+    --ocean: #2d7496;
+    --navy: #0d3353;
+}
+
+/* Hide Streamlit's top bar (the "Deploy" button and the ⋮ menu)
+   so the page shows only the card */
+[data-testid="stHeader"] {
+    display: none;
+}
+
+/* Page background: a soft wash from light sky blue to cream */
+[data-testid="stApp"] {
+    background: linear-gradient(180deg, var(--sky-light) 0%, #fffaf0 100%);
+}
+
+/* Main content area: a white card with rounded corners */
+[data-testid="stMainBlockContainer"] {
+    background: #ffffff;
+    border-radius: 18px;
+    border-top: 6px solid var(--orange);
+    box-shadow: 0 8px 24px rgba(13, 51, 83, 0.12);
+    margin-top: 3rem;
+    max-width: 720px;
+    padding: 2.5rem 2.5rem 3rem;
+}
+
+/* Title */
+[data-testid="stHeading"] h1 {
+    color: var(--navy);
+    letter-spacing: -0.5px;
+}
+
+/* Short orange underline beneath the title */
+[data-testid="stHeading"] h1::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 5px;
+    margin-top: 0.4rem;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--orange), var(--sun));
+}
+
+/* "What is your name?" label */
+[data-testid="stWidgetLabel"] p {
+    color: var(--ocean);
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+/* Text box */
+[data-testid="stTextInputRootElement"] {
+    border: 2px solid var(--sky);
+    border-radius: 12px;
+    background: #ffffff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Text box while the user is typing in it */
+[data-testid="stTextInputRootElement"]:focus-within {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 4px rgba(245, 133, 82, 0.2);
+}
+
+[data-testid="stTextInputRootElement"] input {
+    color: var(--navy);
+}
+
+/* Greeting card, created in app.py with st.container(key="greeting") */
+.st-key-greeting {
+    background: var(--mint-light);
+    border-left: 6px solid var(--sage);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.st-key-greeting p {
+    color: var(--forest);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
 }
