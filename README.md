@@ -24,15 +24,19 @@ If the app has not been used for a while, Streamlit may show a message saying th
 
 ### What you will see
 
-When the app opens you will see the title "Hello Name App" at the top, and underneath it a question, "What is your name?", with an empty text box.
+When the app opens you will see the title "Hello Name App" at the top, and underneath it a question, "What is your name?", with an empty text box. Figure 1 below shows the app as it looks when you first open it.
 
 ![Screenshot of the Hello Name App when it first opens, showing the title and the empty name box](assets/user_guide2.png)
 
+*Figure 1: The Hello Name App when it first opens, ready for you to type your name.*
+
 ### Using the app
 
-Click inside the text box and type your name. When you have finished, press **Enter** on your keyboard, or simply click somewhere else on the page. A green greeting card appears underneath the box with a message such as "Hello, Katia!".
+Click inside the text box and type your name. When you have finished, press **Enter** on your keyboard, or simply click somewhere else on the page. A green greeting card appears underneath the box with a message such as "Hello, Katia!". Figure 2 below shows the greeting after the name "Garfield" has been entered.
 
 ![Screenshot of the Hello Name App with "Garfield" typed in the name box and the greeting "Hello, Garfield!" below it](assets/user_guide.png)
+
+*Figure 2: The greeting card that appears after you enter your name.*
 
 To change the name, click back into the box, edit or replace what is there, and press Enter again. The greeting updates straight away. If you delete everything in the box, the greeting disappears.
 
