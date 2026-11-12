@@ -1,4 +1,8 @@
+from pathlib import Path
 import streamlit as st
+
+st.html(Path("style.css"))
+
 st.title("Hello Name App")
 
 user_name = st.text_input("What is your name?")
